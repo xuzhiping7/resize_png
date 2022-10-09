@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export":"node index.js --source D:\\work\\cocoscreator\\combine_dungeon_client\\FGUIProject\\assets\\icon_source\\ --out D:\\work\\cocoscreator\\combine_dungeon_client\\FGUIProject\\assets\\icon --scale 0.25"
   },
   "author": "funkyfun",
   "license": "MIT",
   "dependencies": {
-    "canvas": "^2.2.0",
+    "canvas": "^2.10.1",
     "commander": "^2.19.0",
     "fs-extra": "^7.0.1"
   }

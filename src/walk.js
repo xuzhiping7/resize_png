@@ -10,21 +10,23 @@ function _walk(filePath) {
   if (isDir) {
     fs.readdirSync(filePath)
       .map(name => {
+
         name = `${filePath}${path.sep}${name}`
+        console.log(name)
         _walk(name)
       });
   } else {
-    if (filePath.match(/(\.png|\.jpg|\.jpeg)$/)) {
+    if (filePath.match(/(\.png|\.jpg|\.jpeg|\.PNG|\.JPG|\.JPEG)$/)) {
       let pathAdd = filePath.replace(_source, '')
       let op = _outPath
       if (pathAdd != '') {
         op = path.join(op, pathAdd)
       }
-      fileMap.push({sourcePath: filePath, outPath: op})
+      fileMap.push({ sourcePath: filePath, outPath: op })
     }
   }
 }
-function walk(source ,outPath) {
+function walk(source, outPath) {
   if (outPath && typeof outPath == 'string') _outPath = outPath
   if (outPath && typeof outPath == 'string') _source = source
   _walk(source)
